@@ -10,10 +10,10 @@
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
          <div class="container">
-            <a href="Employee_Information.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="Create_Account.php" class="btn btn-info btn-fill">Home</a>
-               <a href="" class="btn btn-danger btn-fill">Logout</a>     
+            <a href="Employee_Information.php" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="Create_Account.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
          </div><br>
 
@@ -98,8 +98,8 @@
                                        </div>
                                        <div class="form-group row  justify-content-md-center">
                                           <label  class="col-md-4 col-form-label">Full Name</label>
-                                          <div class="col-md-8">
-                                             <label  class="col-form-label">
+                                          <div class="col-md-8" style="text-align: center;">
+                                             <label  class="col-form-label" align="center">
                                                 <?= $row['full_name']; ?>
                                                 <input name="full_name" type="hidden" value="<?= $row['full_name']; ?>">
                                              </label>

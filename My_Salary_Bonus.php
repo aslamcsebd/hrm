@@ -12,44 +12,43 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="employeeHome.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="employeeHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+         <div class="topHead">
+            <a href="employeeHome.php" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="employeeHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
+         </div>
 
-            <div class="text-center" style="font-weight: bold;">
-               <h4 style="margin: 0px;">
-                  <?php
-                     date_default_timezone_set("Asia/Dhaka");
-                     echo "Name this Month".' : '. $today= date("M-Y"); 
-                                                            
-                        $sql  ="select * from employee where employee_id='$_SESSION[employee_id]' AND full_name='$_SESSION[employeeName]'";
-                        $result  =  mysqli_query($hrm,$sql);
-                        $row = mysqli_fetch_assoc($result); 
-                           $row['job_type']; 
-                  ?>
+         <div class="text-center" style="margin: -35px 0px 5px;">
+            <h5>
+               <?php
+                  date_default_timezone_set("Asia/Dhaka");
+                  echo "Name this Month".' : '. $today= date("M-Y"); 
+                                                         
+                     $sql  ="select * from employee where employee_id='$_SESSION[employee_id]' AND full_name='$_SESSION[employeeName]'";
+                     $result  =  mysqli_query($hrm,$sql);
+                     $row = mysqli_fetch_assoc($result); 
+                        $row['job_type']; 
+               ?>
 
-                  <table class="table table-striped table-bordered table-hover" align="center" style="width: auto; ">
-                     <thead align="center" style="background: #00b894; font-size: 0.9em;">                
-                        <th>Employee Id</th>
-                        <th>Full Name</th>
-                        <th>Job Post</th><td>
+               <table class="table table-striped table-bordered table-hover" align="center" style="width: auto; ">
+                  <thead align="center" style="background: #00b894; font-size: 0.9em;">                
+                     <th>Employee Id</th>
+                     <th>Full Name</th>
+                     <th>Job Post</th>
 
-                     </thead>
-                     <tbody align="center" style="font-size: 0.8em;">
-                        <tr>
-                           <td><?= $_SESSION['employee_id']; ?></td>
-                           <td><?= $_SESSION['employeeName']; ?></td>
-                           <td><?= $row['job_type']; ?></td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </h4>             
-            </div>
-            
-         </div><br>
+                  </thead>
+                  <tbody align="center" style="font-size: 0.8em;">
+                     <tr>
+                        <td><?= $_SESSION['employee_id']; ?></td>
+                        <td><?= $_SESSION['employeeName']; ?></td>
+                        <td><?= $row['job_type']; ?></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </h5>             
+         </div>
 
          <?php if(isset($_SESSION['salary_update_successfully'])) { ?>
             <?php 

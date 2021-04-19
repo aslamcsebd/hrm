@@ -14,13 +14,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="Employee_Information.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+         <div class="topHead">
+            <a href="Employee_Information.php" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
-         </div><br>         
+         </div>      
          <div id="page-wrapper">
             <div class="row">
                <div class="col-lg-12">
@@ -37,11 +37,11 @@
 
                                        <?php if($row['gender']=='Male'){ ?>
                                           <div class="text-center">                 
-                                             <img src="images/default.png" alt="Profile picture not found" width="200" height="200" style="border-radius: 50%; margin: 15px 0px;">
+                                             <img src="assets/profilePicture/default.png" alt="Profile picture not found" width="200" height="200" style="border-radius: 50%; margin: 15px 0px;">
                                           </div>
                                            <?php }else{?>
                                               <div class="text-center">                 
-                                             <img src="images/female.png" alt="Profile picture not found" width="200" height="200" style="border-radius: 50%; margin: 15px 0px; border: 5px solid #fff;">
+                                             <img src="assets/profilePicture/female.png" alt="Profile picture not found" width="200" height="200" style="border-radius: 50%; margin: 15px 0px; border: 5px solid #fff;">
                                           </div>
                                        <?php }?>
 

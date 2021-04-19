@@ -5,13 +5,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="adminHome.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
-            </div>
-         </div><br>
+         <div class="topHead">
+            <a href="Create_Account.php" class="btn btn-sm btn-success btn-fill">Add Employee</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>
+            </div>     
+         </div>
 
          <?php if(isset($_SESSION['Application_delete_successfully'])) { ?>
             <?php 
@@ -76,16 +76,16 @@
                                  <td class="text-center">
                                     <?php if ($row['status']=='0') { ?>   
 
-                                       <a class="btn btn-info btn-fill pull-center" href="leaveApplicationView.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">New Request</a>
+                                       <a class="btn btn-sm btn-info btn-fill pull-center" href="leaveApplicationView.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">New Request</a>
 
-                                      <!--  <a class="btn btn-danger btn-fill pull-center" onclick="return confirm('Are you sure?')" href="Delete_Application.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">Delete</a> -->
+                                      <!--  <a class="btn btn-sm btn-danger btn-fill pull-center" onclick="return confirm('Are you sure?')" href="Delete_Application.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">Delete</a> -->
 
                                     <?php }elseif ($row['status']=='1') { ?>  
-                                       <a class="btn btn-success btn-fill pull-center" href="leaveApplicationView.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">Approve</a>
+                                       <a class="btn btn-sm btn-success btn-fill pull-center" href="leaveApplicationView.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">Approve</a>
 
                                     <?php }elseif ($row['status']=='2') { ?>
 
-                                       <a class="btn btn-danger btn-fill pull-center" href="leaveApplicationView.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">Reject</a>
+                                       <a class="btn btn-sm btn-danger btn-fill pull-center" href="leaveApplicationView.php?id=<?php echo $row['id']; ?>&employee_id=<?php echo $row['employee_id']; ?>&date=<?php echo $row['date']; ?>">Reject</a>
                                       
                                     <?php  } ?>
                                     

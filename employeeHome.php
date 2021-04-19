@@ -20,9 +20,9 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
+         <div class="topHead">
             <div class="pull-right">
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
          </div><br>
 
@@ -67,7 +67,7 @@
                                           <img src="<?= $row['photo'];?>" alt="Profile picture not found" width="200" height="200" style="border-radius: 50%; margin: 15px 0px;">                                         
                                        </div> 
                                     <?php } ?>
-                                    <h3> <?= $row['full_name']; ?> </h3>                                   
+                                    <h3 class="text-center"> <?= $row['full_name']; ?> </h3>                                   
 
                                     <div class="form-group row">
                                        <label class="col-md-4 col-form-label">Employee_id</label>
@@ -78,7 +78,7 @@
                                     <div class="form-group row">
                                        <label class="col-md-4 col-form-label">Job Post</label>
                                        <div class="col-md-8">
-                                          <label class="col-form-label"><?= $row['job_type'] ?></label>
+                                          <label class="col-form-label" align="center"><?= $row['job_type'] ?></label>
                                        </div>
                                     </div>                                    
                                  
@@ -107,8 +107,8 @@
                                        </div>
                                     </div>                                    
                                     <div class="form-group row" style="border: none; ">
-                                       <div class="col-md-offset-4 col-md-8" style="background: none;">
-                                          <a href="Edit_Account.php" class="btn btn-info btn-fill pull-right">Edit Account</a>
+                                       <div class="col-md-offset-4 col-md-8" style="background: none; argin-left: 120px;">
+                                          <a href="Edit_Account.php" class="btn btn-sm btn-success btn-fill pull-right">Edit Account</a>
                                        </div>                                     
                                     </div>  
                                  </div>

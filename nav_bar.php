@@ -9,9 +9,5 @@
          </button>
          <a class="navbar-brand" href="#">Human Resource Management System</a>
       </div>
-      <div class="collapse navbar-collapse">
-         <ul class="nav navbar-nav navbar-right">            
-         </ul>
-      </div>
    </div>
 </nav>

@@ -5,13 +5,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="#" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+         <div class="topHead">
+            <a href="#" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
-         </div><br>
+         </div>
 
          <?php if(isset($_SESSION['Application_delete_successfully'])) { ?>
             <?php 

@@ -6,13 +6,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="employeeHome.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="employeeHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+         <div class="topHead">
+            <a href="employeeHome.php" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="employeeHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
-         </div><br>
+         </div>
 
 			<?php
 				include('connection.php');
@@ -127,7 +127,7 @@
 									              	<div class="row">  										               
 										               <div class="col-md-offset-2 col-md-10 col-xs-12">
 										                  <div class="form-group">
-										                   	<input type="submit" name="addRequest" onclick="return confirm('Are you sure?')" value="Send Request" class="btn btn-primary btn-fill tn-block btn-lg" tabindex="7" style="color: #fff;">
+										                   	<input type="submit" name="addRequest" onclick="return confirm('Are you sure?')" value="Send Request" class="btn btn-sm btn-primary btn-fill tn-block btn-lg" tabindex="7" style="color: #fff;">
 										                  </div> 
 										               </div>  
 									              	</div>  				                	

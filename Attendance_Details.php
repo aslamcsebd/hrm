@@ -2,50 +2,46 @@
 	session_start(); 
    include('connection.php'); 
 	$hrm  =  hrm();
-
    date_default_timezone_set("Asia/Dhaka");
   	$today= date("Y-m-d");
 ?>
 <?php include('header.php'); ?>
 <div class="wrapper">   
-   <?php include('left_header.php');   ?>
-   
+   <?php include('left_header.php'); ?>   
    <div class="main-panel">
-      <?php include('nav_bar.php'); ?>  
-
+      <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-
-         <div class="container">
-
+         <div class="topHead">
          	<?php 
             	if (isset($_SESSION['adminLogin'])) { ?>
- 				<a href="Create_Account.php" class="btn btn-success btn-fill">Add Employee</a>
+ 						<a href="Create_Account.php" class="btn btn-sm btn-success btn-fill">Add Employee</a>
             <?php } ?>
-            <div class="pull-right">
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
               	<?php 
             		if (isset($_SESSION['adminLogin'])) { ?>
-						<a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
+						<a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
 					
 					<?php } elseif (isset($_SESSION['employeeLogin'])) { ?>
-						<a href="employeeHome.php" class="btn btn-info btn-fill">Home</a>						
-					<?php }
-            	 ?> 
-
-
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>
+						<a href="employeeHome.php" class="btn btn-sm btn-info btn-fill">Home</a>		
+					
+					<?php } ?> 
+            	 <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>
             </div>
+         </div>  <?php 
+         	if (isset($_SESSION['adminLogin'])) { ?>
+  					<div class="text-center" style="margin: -35px 0px 5px;">
+         <?php }else{ ?>
+  					<div class="text-center" style="margin: -20px 0px 5px;">
+			<?php } ?> 
+		  				<h5 >
+			  				<?php
+			  					date_default_timezone_set("Asia/Dhaka");
+			  					echo "Name this Month".' : '. $today= date("M-Y"); 
+			  					echo "<br>Full Information".' : '.' ['.date("Y-m-d-D").']'; 
+			  				 ?> 
+			  			</h5> 				
+					</div>
 
-            <div class="text-center" style="font-weight: bold;">
-  				<h4 style="margin: 0px;">
-	  				<?php
-	  					date_default_timezone_set("Asia/Dhaka");
-	  					echo "Name this Month".' : '. $today= date("M-Y"); 
-	  					echo "<br>Full Information".' : '.' ['.date("Y-m-d-D").']'; 
-	  				 ?> 
-	  			</h4> 				
-  				</div>
-
-         </div><br>
            <div id="page-wrapper">
             <div class="row">
                <div class="col-lg-12">
@@ -103,7 +99,7 @@
 					  							<td><label> <input type="date" name="firstDay" required=""></label> </td>
 					  							<td><label> <input type="date" name="lastDay" required=""></label> </td>
 					  							<td class="text-center">
-					  								<button type="submit" class="btn btn-success btn-fill pull-center" name="viewFull" value='<?= "$employee_id"; ?>'>View Full </button>
+					  								<button type="submit" class="btn btn-sm btn-success btn-fill pull-center" name="viewFull" value='<?= "$employee_id"; ?>'>View Full </button>
 						  						</td>	
 						  					</form>  							
 				  						</tr>	  					

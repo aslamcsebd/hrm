@@ -3,5 +3,4 @@
 		$hrm =mysqli_connect('localhost','root','','hrm');
 		return $hrm;
 	}
-
 ?>

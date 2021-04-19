@@ -16,10 +16,9 @@ fieldset.scheduler-border {
 }
 legend.scheduler-border { 
     width:inherit;
-    font-size: 1.5em !important;
+    font-size: 1.2em !important;
     font-weight: bold !important;
     text-align: center !important;
-    border: 3px solid #000; 
     background-color: gray; /*81ecec*/
     border-radius: 12px;   
     padding:5px 10px; 
@@ -28,7 +27,7 @@ legend.scheduler-border {
 
 .col-form-label{
   color: white;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 input[type="text"], input[type="password"],input[type="email"]{

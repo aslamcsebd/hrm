@@ -6,15 +6,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-
-         <div class="container">
-
-            <a href="holidays.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+         <div class="topHead">
+            <a href="holidays.php" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
-         </div><br>
+         </div>
 
 			<?php
 				include('connection.php'); 
@@ -115,21 +113,16 @@
 										               </div>  
 										               <div class="col-md-8 col-xs-12">
 										                  <div class="form-group">
-																	<textarea type="text" class="form-control" rows="2" name="about" placeholder="About Holiday" required>
-																	</textarea>	
+																	<textarea type="text" class="form-control" rows="2" name="about" placeholder="About Holiday" required></textarea>
 										                  </div> 
 										               </div>  
 									              	</div>  	
 
 									              	<div class="row">
 									              		<div class="col-md-offset-4 col-md-4 col-xs-12">
-									                  	<div class="form-group">
-									                  		<a href="holidays.php" class="btn btn-success btn-block btn-fill">Back</a>
-										                  </div>
-										               </div>
-									                	<div class="col-md-4 col-xs-12">
-									                  	<div class="form-group">
-									                    		<input type="submit" name="addHoliday" value="Add Holiday" class="btn btn-primary btn-fill btn-block" tabindex="7" onclick="return confirm('Are you sure?')" style="color: #fff;">
+            												<div class="btn-group pull-right" role="group" aria-label="Basic example">
+									                  		<a href="holidays.php" class="btn btn-sm btn-success btn-fill">Back</a>
+									                    		<input type="submit" name="addHoliday" value="Add Holiday" class="btn btn-sm btn-primary btn-fill"  tabindex="7" onclick="return confirm('Are you sure?')" style="color: #fff;">
 									                  	</div>
 									                	</div>								                	
 										            </div>									         

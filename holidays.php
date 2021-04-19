@@ -8,19 +8,22 @@
          <div class="container">
             <?php 
                if (isset($_SESSION['adminLogin'])) { ?>
-                  <a href="add_holiday.php" class="btn btn-success btn-fill">Add Holiday</a>
+                  <a href="add_holiday.php" class="btn btn-sm btn-success btn-fill">Add Holiday</a>
             <?php } ?> 
             <div class="pull-right">
+               <div class="btn-group" role="group" aria-label="Basic example">
+
                <?php 
                   if (isset($_SESSION['adminLogin'])) { ?>
-                  <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
+                  <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
                
                <?php } elseif (isset($_SESSION['employeeLogin'])) { ?>
-                  <a href="employeeHome.php" class="btn btn-info btn-fill">Home</a>                
+                  <a href="employeeHome.php" class="btn btn-sm btn-info btn-fill">Home</a>                
                <?php }
                 ?> 
                
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a> 
+               </div>    
             </div>
          </div><br>
 
@@ -66,12 +69,11 @@
                      <div class="panel-body">
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                            <thead>
-                              <th>Date</th>
-                              <th>Day</th>
+                              <th width="20%">Date & Day</th>
                               <th>Holiday</th>
                               <th>About</th>
                            <?php if (isset($_SESSION['adminLogin'])) { ?>                              	
-                              <th>Action</th>
+                              <th width="13%">Action</th>
                            <?php } ?>
                               
                            </thead>
@@ -85,21 +87,28 @@
                            <tbody align="center">
                               <?php while($row = mysqli_fetch_assoc($result)) { ?>
                               <tr>
-                              	<?php 
+                              	<?php
 												date_default_timezone_set("Asia/Dhaka");
-				                        $date=$row['date'];
-				                        $day=date('l', strtotime($date));
+
+                                    $thisYear = date('Y');
+                                    $monthDate = date('m-d', strtotime($row['date']));
+                                    $yearMonthDate = $thisYear . '-' . $monthDate;
+                                    $fullDate = date('Y-m-d (l)', strtotime($yearMonthDate));
+				                       
                               	 ?>
-                                 <td><label> <?= $date; ?></label> </td>
-                                 <td><label> <?= $day; ?></label> </td>
+                                 <td><label> <?= $fullDate; ?></label> </td>
                                  <td><label> <?= $row['holiday'] ?></label> </td>
                                  <td><label style="text-align: justify;"> <?= $row['about'] ?></label> </td>
 
                               <?php if (isset($_SESSION['adminLogin'])) { ?>                                 
                                  <td class="text-center">
-                                    <a class="btn btn-primary btn-fill pull-center" href="holiday_edit.php?id=<?php echo $row['id']; ?>">Edit</a>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                       
+                                       <a class="btn btn-primary btn-sm btn-fill pull-center" href="holiday_edit.php?id=<?php echo $row['id']; ?>">Edit</a>
 
-                                    <a class="btn btn-danger btn-fill pull-center" onclick="return confirm('Are you sure?')" href="holiday_delete.php?id=<?php echo $row['id']; ?>">Delete</a>                
+                                       <a class="btn btn-danger btn-sm btn-fill pull-center" onclick="return confirm('Are you sure?')" href="holiday_delete.php?id=<?php echo $row['id']; ?>">Delete</a>
+
+                                    </div>               
                                  </td> 
                               <?php } ?>                        
                               </tr>

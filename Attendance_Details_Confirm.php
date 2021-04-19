@@ -12,46 +12,43 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>  
       <div class="container"><br>
-         <div class="container">
-            <a href="Attendance_Details.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>
+         <div class="topHead">
+            <a href="Attendance_Details.php" class="btn btn-sm btn-success btn-fill">Back</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>
             </div>
-	  			<div class="text-center" style="font-weight: bold;">
-	  				<h4 style="margin: 0px;">
-		  				<?php
-		  					date_default_timezone_set("Asia/Dhaka");
-		  					echo "Name this Month".' : '. $today= date("M-Y"); 
+         </div>
+  			<div class="text-center" style="margin: -35px 0px 5px;">
+  				<h5>
+	  				<?php
+	  					date_default_timezone_set("Asia/Dhaka");
+	  					echo "Name this Month".' : '. $today= date("M-Y"); 
 
-		  					if (isset($_POST['viewFull'])) {
-								$employee_id=$_POST['viewFull'];														
-								$sql 	="select * from employee where employee_id='$employee_id'";
-								$result 	=	mysqli_query($hrm,$sql);
-
-								$row = mysqli_fetch_assoc($result); 
-			  						$row['employee_id'];
-			  						$row['full_name'];								
-							}		
-		  				?>
-
-		  				<table class="table table-striped table-bordered table-hover" align="center" style="width: auto; ">
-		  					<thead align="center" style="background: #00b894; font-size: 0.9em;">	  					
-		  						<th>Employee Id</th>
-		  						<th>Full Name</th>
-		  						<th>Job Post</th>
-		  					</thead>
-		  					<tbody align="center" style="font-size: 0.8em;">
-		  						<tr>
-		  							<td><?= $row['employee_id'] ?></td>
-		  							<td><?= $row['full_name'] ?></td>
-		  							<td><?= $row['job_type'] ?></td>
-		  						</tr>
-		  					</tbody>
-		  				</table>
-		  			</h4> 				
-	  			</div>
-	  		</div><br>
+	  					if (isset($_POST['viewFull'])) {
+							$employee_id=$_POST['viewFull'];														
+							$sql 	="select * from employee where employee_id='$employee_id'";
+							$result 	=	mysqli_query($hrm,$sql);
+							$row = mysqli_fetch_assoc($result); 				
+						}		
+	  				?>
+	  				<table class="table table-striped table-bordered table-hover" align="center" style="width: auto; ">
+	  					<thead align="center" style="background: #00b894; font-size: 0.9em;">
+	  						<th>Employee Id</th>
+	  						<th>Full Name</th>
+	  						<th>Job Post</th>
+	  					</thead>
+	  					<tbody align="center" style="font-size: 0.8em;">
+	  						<tr class="bg-success">
+	  							<td><?= $row['employee_id'] ?></td>
+	  							<td><?= $row['full_name'] ?></td>
+	  							<td><?= $row['job_type'] ?></td>
+	  						</tr>
+	  					</tbody>
+	  				</table>
+	  			</h5> 				
+  			</div>
+  			
 	  		<div id="page-wrapper">
             <div class="row">
                <div class="col-lg-12">

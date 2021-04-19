@@ -1,11 +1,12 @@
-<div class="sidebar" data-color="green" data-image="assets/img/sidebar-5.jpg">
+<div class="sidebar" data-color="green" data-image="assets/img/sidebar.jpg">
    <div class="sidebar-wrapper">
       <div class="logo">
-          <a href="#" class="simple-text">
-             Employee Management
+          <a href="adminHome.php" class="simple-text bg-primary">
+            Employee Management
           </a>
       </div>
-      <?php if(isset($_SESSION['adminLogin'])) { ?>      
+
+      <?php if(isset($_SESSION['adminLogin'])) { ?>
          <ul class="nav">
             <li class="">
                <a href="Employee_Information.php">
@@ -35,6 +36,7 @@
             </li>
          </ul>
       <?php } ?>
+
       <?php if(isset($_SESSION['employeeLogin'])) { ?>
          <ul class="nav">
             <li class="">
@@ -65,13 +67,13 @@
             </li>
          </ul>
       <?php } ?>
-   <hr>
 
-      <div class="logo">
-          <a href="#" class="simple-text">
+      <div class="logo ">
+          <a href="#" class="simple-text bg-primary">
              Payroll System
           </a>
       </div>
+
       <?php if(isset($_SESSION['adminLogin'])) { ?>
          <ul class="nav">
             <li class="">
@@ -89,6 +91,7 @@
             </li>
          </ul>
       <?php } ?>
+
       <?php if(isset($_SESSION['employeeLogin'])) { ?>
          <ul class="nav">
             <li class="">
@@ -100,12 +103,12 @@
          </ul>
       <?php } ?>
 
-   <hr>
-      <div class="logo">
-         <a href="#" class="simple-text">
-            Leave Management System
+      <div class="logo ">
+         <a href="#" class="simple-text bg-primary">
+            Application Management
          </a>
       </div>
+
       <?php if(isset($_SESSION['adminLogin'])) { ?>
          <ul class="nav">
             <li class="">
@@ -114,20 +117,6 @@
                   <p>Leave Application</p>
                </a>
             </li>
-
-            <li>
-               <a href="#">
-                  <i class="pe-7s-plus"></i>
-                  <p>Movement Application</p>
-               </a>
-            </li>
-
-           <!--  <li>
-               <a href="#">
-                  <i class="pe-7s-plus"></i>
-                  <p>Application Approval</p>
-               </a>
-            </li> -->
             <li>
                <a href="holidays.php">
                   <i class="pe-7s-plus"></i>
@@ -136,6 +125,7 @@
             </li>
          </ul> 
       <?php } ?>
+
       <?php if(isset($_SESSION['employeeLogin'])) { ?>
          <ul class="nav">
             <li class="">
@@ -143,14 +133,7 @@
                   <i class="pe-7s-graph"></i>
                   <p>Leave Application</p>
                </a>
-            </li>            
-
-            <li>
-               <a href="#">
-                  <i class="pe-7s-plus"></i>
-                  <p>Movement Application</p>
-               </a>
-            </li>
+            </li>  
 
             <li>
                <a href="leaveApproval.php">
@@ -166,5 +149,6 @@
             </li>
          </ul>   
       <?php } ?> 
+
    </div>   
 </div>

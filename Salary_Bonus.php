@@ -7,22 +7,22 @@
       <?php include('nav_bar.php'); ?>  
 
       <div class="container"><br>
-         <div class="container">
-            <a href="adminHome.php" class="btn btn-success btn-fill">Back</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
-            </div>           
-            <div class="text-center" style="font-weight: bold;">
-               <h4 style="margin: 0px;">
-                  <?php
-                     date_default_timezone_set("Asia/Dhaka");
-                     echo "Name this Month".' : '. $today= date("M-Y"); 
-                     echo "<br>Full Information".' : '.' ['.date("Y-m-d-D").']'; 
-                   ?> 
-               </h4>             
+         <div class="topHead">
+            <a href="Create_Account.php" class="btn btn-sm btn-success btn-fill">Add Employee</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
-         </div><br>
+         </div>           
+         <div class="text-center">
+            <h5 style="margin: -35px 0px 5px;">
+               <?php
+                  date_default_timezone_set("Asia/Dhaka");
+                  echo "Name this Month".' : '. $today= date("M-Y"); 
+                  echo "<br>Full Information".' : '.' ['.date("Y-m-d-D").']'; 
+                ?> 
+            </h5>             
+         </div>
 
          <?php if(isset($_SESSION['salary_already_add'])) { ?>
             <?php 
@@ -82,7 +82,7 @@
                                     <td><label> <input type="text" name="bonus"></label> </td>
 
                                     <td class="text-center">
-                                       <button type="submit" class="btn btn-success btn-fill pull-center" name="salary_bonus" value='<?="$row[employee_id]"; ?>'>Add Now</button>
+                                       <button type="submit" class="btn btn-sm btn-success btn-fill pull-center" name="salary_bonus" value='<?="$row[employee_id]"; ?>'>Add Now</button>
                                     </td> 
                                  </form>         
                               </tr>

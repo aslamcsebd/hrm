@@ -5,13 +5,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="Create_Account.php" class="btn btn-success btn-fill">Add Employee</a>
-            <div class="pull-right">
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+         <div class="topHead">
+            <a href="Create_Account.php" class="btn btn-sm btn-success btn-fill">Add Employee</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>     
             </div>
-         </div><br>
+         </div>
 
          <?php if(isset($_SESSION['employee_add_successfully'])) { ?>
             <?php 
@@ -58,13 +58,15 @@
                                  <td><label> <?= $row['contact'] ?></label> </td>
                                  <td><label> <?= $row['email'] ?></label> </td>
                                  
-                                 <td class="text-center">                           
-                                    <a class="btn btn-info btn-fill pull-center" href="View_Employee.php?employee_id=<?php echo $row['employee_id']; ?>">View</a>
+                                 <td class="text-center"> 
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                       <a class="btn btn-info btn-sm btn-fill pull-center" href="View_Employee.php?employee_id=<?php echo $row['employee_id']; ?>">View</a>
 
-                                    <a class="btn btn-primary btn-fill pull-center" href="Edit_Account.php?employee_id=<?php echo $row['employee_id']; ?>">Edit</a>
+                                       <a class="btn btn-primary btn-sm btn-fill pull-center" href="Edit_Account.php?employee_id=<?php echo $row['employee_id']; ?>">Edit</a>
 
-                                    <a class="btn btn-danger btn-fill pull-center" onclick="return confirm('Are you sure?')" href="Delete_Employee.php?employee_id=<?php echo $row['employee_id']; ?>">Delete</a>                
-                                 </td>                      
+                                       <a class="btn btn-danger btn-sm btn-fill pull-center" onclick="return confirm('Are you sure?')" href="Delete_Employee.php?employee_id=<?php echo $row['employee_id']; ?>">Delete</a>
+                                    </div>
+                                 </td>
                               </tr>
                               <?php } ?>
                            </tbody>

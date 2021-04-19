@@ -5,13 +5,13 @@
    <div class="main-panel">
       <?php include('nav_bar.php'); ?>
       <div class="container"><br>
-         <div class="container">
-            <a href="Create_Account.php" class="btn btn-success btn-fill">Add Employee</a>
-            <div class="pull-right">            
-               <a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-               <a href="logout.php" class="btn btn-danger btn-fill">Logout</a>   
-            </div>
-         </div><br>
+         <div class="topHead">
+            <a href="Create_Account.php" class="btn btn-sm btn-success btn-fill">Add Employee</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+               <a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+               <a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a>  
+            </div> 
+         </div>
 
          <?php if(isset($_SESSION['salary_update_successfully'])) { ?>
             <?php 
@@ -60,7 +60,7 @@
                                  <td><label> <?= $row['salary']+$row['bonus'] ?></label> </td>
                                  
                                  <td class="text-center">  
-                                    <a class="btn btn-primary btn-fill pull-center" href="Salary_Edit.php?employee_id=<?php echo $row['employee_id']; ?>&salary_month=<?php echo $row['salary_month']; ?>">Edit</a>                                                
+                                    <a class="btn btn-sm btn-primary btn-fill pull-center" href="Salary_Edit.php?employee_id=<?php echo $row['employee_id']; ?>&salary_month=<?php echo $row['salary_month']; ?>">Edit</a>                                                
                                  </td>                      
                               </tr>
                               <?php } ?>

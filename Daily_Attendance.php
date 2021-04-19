@@ -1,45 +1,39 @@
 <?php  session_start(); ?>
 <?php include('header.php'); ?>
 <div class="wrapper">   
-   <?php include('left_header.php');   ?>
-   
+   <?php include('left_header.php'); ?>   
    <div class="main-panel">
-      <?php include('nav_bar.php'); ?>  
-
+      <?php include('nav_bar.php'); ?> 
       <div class="container"><br>
-
-         <div class="container">
-
-            <div class="pull-right">
-            	<?php 
+         <div class="topHead">
+         	<a href="Create_Account.php" class="btn btn-sm btn-success btn-fill">Add Employee</a>
+            <div class="btn-group pull-right" role="group" aria-label="Basic example">
+            	<?php
             		if (isset($_SESSION['adminLogin'])) { ?>
-						<a href="adminHome.php" class="btn btn-info btn-fill">Home</a>
-					
+						<a href="adminHome.php" class="btn btn-sm btn-info btn-fill">Home</a>	
 					<?php } elseif (isset($_SESSION['employeeLogin'])) { ?>
-						<a href="employeeHome.php" class="btn btn-info btn-fill">Home</a>						
-					<?php }
-            	 ?>               
-               	<a href="logout.php" class="btn btn-danger btn-fill">Logout</a>     
+						<a href="employeeHome.php" class="btn btn-sm btn-info btn-fill">Home</a>
+					<?php } ?>               
+               	<a href="logout.php" class="btn btn-sm btn-danger btn-fill">Logout</a> 
             </div>
-
-            <div class="text-center">
-	  				<h4 style="margin: 0px;">
-		  				<?php
-		  					date_default_timezone_set("Asia/Dhaka");
-		  					echo "Today".' : '. $today= date("Y-m-d-D"); 
-		  				 ?> 
-		  			</h4> 				
-  				</div>
-         </div><br>
-   	
+         </div>
+  			<div class="text-center" style="margin: -35px 0px 5px;">         
+	  			<h5>
+		  			<?php
+		  				date_default_timezone_set("Asia/Dhaka");
+		  				echo "Today".' : '. $today= date("Y-m-d- D"); 
+		  			?> 
+		  		</h5>
+		  	</div>	
 			<?php if(isset($_SESSION['attendance_fail'])) { ?>
 	        	<?php 
 	            echo '<script type="text/javascript">
 	                     alert("Sorry!!! Employee attendance_fail.");
 	                  </script>';
 	         ?> 
-			<?php } ?> 
-  			 <div id="page-wrapper">
+			<?php } ?>
+
+  			<div id="page-wrapper">
             <div class="row">
                <div class="col-lg-12">
                   <div class="panel panel-default">
@@ -80,27 +74,32 @@
 
 				  							<?php if (isset($_SESSION['adminLogin'])) {?>	
 						  						<td class="text-center">
+               								<div class="btn-group" role="group" aria-label="Basic example">
+
 						  							<?php
 							  							$sql2 = "select*from attendance where employee_id='$row[employee_id]' AND attendance_date='$today' AND status='A'";
 							  							$result2 = mysqli_query($hrm,$sql2);
 							  							$rowcount = mysqli_num_rows($result2);
 								  							if ($rowcount) { ?>
-								  								<a class="btn btn-success btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=present"> Present</a>	
+								  								<a class="btn btn-sm btn-success btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=present"> Present</a>	
 
-								  							<?php } else { 
+								  							<?php }else{ 
 
 								  								$sql3 = "select*from attendance where employee_id='$row[employee_id]' AND attendance_date='$today' AND status='P'";
 									  							$result3 	=	mysqli_query($hrm,$sql3);
 									  							$rowcount2 = mysqli_num_rows($result3);
 
-									  							if ($rowcount2) { ?>				
-																	<a class="btn btn-info btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=absent">Absent</a>
-																<?php } else {?>
-																	<a class="btn btn-success btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=present"> Present</a>
+									  							if ($rowcount2) { ?>
 
-																	<a class="btn btn-info btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=absent">Absent</a>
+																	<a class="btn btn-sm btn-info btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=absent">Absent</a>
+																<?php } else {?>
+																	<a class="btn btn-sm btn-success btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=present"> Present</a>
+
+																	<a class="btn btn-sm btn-info btn-fill pull-center" href="Attendance_Confirm.php?employee_id=<?php echo $row['employee_id']; ?>&full_name=<?php echo $row['full_name']; ?>&attendance=absent">Absent</a>
+
 																<?php }
-															} ?>												
+															} ?>	
+															</div>											
 						  						</td>
 					  						<?php } ?>
 					  						<td>
@@ -132,9 +131,7 @@
          </div>
       </div>
    </div>
-</div> 
-
-
+</div>
 
 <?php unset($_SESSION['attendance_fail']); ?>
 <?php unset($_SESSION['delete_successfully']); ?>

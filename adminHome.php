@@ -55,7 +55,7 @@
 
       <?php include('nav_bar.php'); ?>  
       <div class="pull-right">
-         <a href="logout.php" class="btn btn-danger btn-fill" style="margin: 8px 16px;">Logout</a>     
+         <a href="logout.php" class="btn btn-sm btn-danger btn-fill" style="margin: 8px 16px;">Logout</a>     
       </div>
          <div class="container">  
             <div class="col-md-12 row adminHome" align="center">
@@ -63,7 +63,7 @@
                   <section class="menu-section">
                      <ul >                     
                         <li class="menu-item">
-                           <div class="image-thumbnail" >                           
+                           <div class="image-thumbnail">                           
                               <h3><?php echo $total_employee; ?></h3>
                               <h5>Total Employee</h5>
                            </div>                           
